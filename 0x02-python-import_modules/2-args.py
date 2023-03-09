@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from sys import argv
-def argum():
+if __name__ == "__main__":
+    from sys import argv
     arg_len = len(argv) - 1
     if arg_len == 0:
         a_string = "arguments."
@@ -11,5 +11,3 @@ def argum():
     print(f"{arg_len} {a_string}")
     for i in range(1, arg_len + 1):
         print(f"{i}: {argv[i]}")
-if __name__ == "__main__":
-    argum()
