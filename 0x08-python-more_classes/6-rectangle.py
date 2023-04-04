@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a class Rectangle from module 3-rectangle
+Defines a class Rectangle from module 6-rectangle
 """
 
 
