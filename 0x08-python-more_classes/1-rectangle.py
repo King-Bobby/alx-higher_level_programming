@@ -16,7 +16,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initalizes class Rectangle
-        
+
         Attributes:
             width(int): width of the rectangle, default value is 0
             height(int): height of the rectangle, default value is 0
@@ -28,7 +28,7 @@ class Rectangle:
     def width(self):
         """It returns the value of height"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
@@ -48,12 +48,12 @@ class Rectangle:
     def height(self):
         """It returns the value of height"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """
         It sets the value for height
-        
+
         Attributes:
             value(int): the value to be assigned to height
         """
