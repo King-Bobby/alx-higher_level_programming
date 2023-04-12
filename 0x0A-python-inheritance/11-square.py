@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 10-square that contains
+Module 11-square that contains
 Class BaseGeometry
 class Rectangle that inherits from BaseGeometry and
 class Square that inherits from Rectangle
