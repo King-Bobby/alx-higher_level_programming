@@ -1,4 +1,4 @@
-#!/usr/bin/pythonu3
+#!/usr/bin/python3
 """
 Module 10-student that contains class Student
 """
