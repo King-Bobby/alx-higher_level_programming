@@ -19,7 +19,7 @@ class Rectangle(Base):
         height(self)    height(self, value)
         x(self)         x(self, value)
         y(self)         y(self, value)
-        area(self)"""
+        area(self)      display(self)"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes class"""
         super().__init__(id)
@@ -87,3 +87,8 @@ class Rectangle(Base):
     def area(self):
         """returns the area"""
         return self.__width * self.__height
+
+    def display(self):
+        """prints the rectangle shape using (#)"""
+        for i in range(self.__height):
+            print("#" * self.__width)
