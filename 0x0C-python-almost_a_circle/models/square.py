@@ -23,17 +23,20 @@ class Square(Rectangle):
     Methods:
         __init__(self, size, x=0, y=0, id=None)
         size(self)      size(self, value)
-        __str__(self)"""
+        __str__(self)   update(self, *args, **kwargs)"""
     def __init__(self, size, x=0, y=0, id=None):
+        """Initailizes the class Square"""
         super().__init__(size, size, x, y, id)
         self.size = size
 
     @property
     def size(self):
+        """gets the value of size"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """sets the value of size"""
         self.width = value
         self.height = value
 
@@ -41,3 +44,27 @@ class Square(Rectangle):
         """returns [Square] (<id>) <x>/<y> - <size>"""
         return "[{:s}] ({:}) {:d}/{:d} - {:d}".format(
                 self.__class__.__name__, self.id, self.x, self.y, self.size)
+
+    def update(self, *args, **kwargs):
+        """if args: assigns available args to the following attributes
+                    in this order id, size, x, y
+        if no args: set attributes according to kwargs"""
+        if args:
+            for idx, value in enumerate(args):
+                if idx == 0:
+                    self.id = value
+                elif idx == 1:
+                    self.size = value
+                elif idx == 2:
+                    self.x = value
+                elif idx == 3:
+                    self.y = value
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
