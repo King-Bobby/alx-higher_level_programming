@@ -5,6 +5,7 @@ Module contains class Base
 
 import json
 
+
 class Base:
     """class contains
     Attributes:
@@ -18,6 +19,7 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """initalizes class Base,
         sets id or increments class attribute and sets as id"""
@@ -51,7 +53,6 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
-
 
     @classmethod
     def create(cls, **dictionary):

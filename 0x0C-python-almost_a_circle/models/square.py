@@ -6,6 +6,7 @@ Module contains Class Square that inherits Class Rectangle
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Class Square contains
     Attributes:
