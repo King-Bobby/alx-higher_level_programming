@@ -20,7 +20,8 @@ class Rectangle(Base):
         x(self)         x(self, value)
         y(self)         y(self, value)
         area(self)      display(self)
-        __str__(self)"""
+        __str__(self)   update(self, *args)
+        """
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes class"""
         super().__init__(id)
@@ -90,7 +91,8 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """prints the rectangle shape using (#)"""
+        """prints the rectangle shape using (#)
+        and gives upward and sideways spacing based on x and y"""
         for a in range(self.__y):
             print()
         for i in range(self.__height):
@@ -101,3 +103,19 @@ class Rectangle(Base):
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
                 self.__class__.__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
+
+    def update(self, *args):
+        """Assigns available args to the following attributes
+        in this order id, width, height, x, y"""
+        for idx, value in enumerate(args):
+            if idx == 0:
+                self.id = value
+            elif idx == 1:
+                self.width = value
+            elif idx == 2:
+                self.height = value
+            elif idx == 3:
+                self.x = value
+            elif idx == 4:
+                self.y = value
+
