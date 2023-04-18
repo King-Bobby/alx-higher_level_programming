@@ -20,7 +20,7 @@ class Rectangle(Base):
         x(self)         x(self, value)
         y(self)         y(self, value)
         area(self)      display(self)
-        __str__(self)   update(self, *args)
+        __str__(self)   update(self, *args, **kwargs)
         """
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes class"""
@@ -104,18 +104,30 @@ class Rectangle(Base):
                 self.__class__.__name__, self.id, self.__x, self.__y,
                 self.__width, self.__height)
 
-    def update(self, *args):
-        """Assigns available args to the following attributes
-        in this order id, width, height, x, y"""
-        for idx, value in enumerate(args):
-            if idx == 0:
-                self.id = value
-            elif idx == 1:
-                self.width = value
-            elif idx == 2:
-                self.height = value
-            elif idx == 3:
-                self.x = value
-            elif idx == 4:
-                self.y = value
-
+    def update(self, *args, **kwargs):
+        """if args: assigns available args to the following attributes
+        in this order id, width, height, x, y
+        if no args: set attributes according to kwargs"""
+        if args:
+            for idx, value in enumerate(args):
+                if idx == 0:
+                    self.id = value
+                elif idx == 1:
+                    self.width = value
+                elif idx == 2:
+                    self.height = value
+                elif idx == 3:
+                    self.x = value
+                elif idx == 4:
+                    self.y = value
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
