@@ -23,7 +23,9 @@ class Square(Rectangle):
     Methods:
         __init__(self, size, x=0, y=0, id=None)
         size(self)      size(self, value)
-        __str__(self)   update(self, *args, **kwargs)"""
+        __str__(self)   update(self, *args, **kwargs)
+        to_dictionary(self)
+        """
     def __init__(self, size, x=0, y=0, id=None):
         """Initailizes the class Square"""
         super().__init__(size, size, x, y, id)
@@ -68,3 +70,12 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        dic_t = {}
+        dic_t["id"] = self.id
+        dic_t["size"] = self.size
+        dic_t["x"] = self.x
+        dic_t["y"] = self.y
+        return dic_t
