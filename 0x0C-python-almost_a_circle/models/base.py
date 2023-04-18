@@ -3,6 +3,7 @@
 Module contains class Base
 """
 
+import json
 
 class Base:
     """class contains
@@ -10,6 +11,7 @@ class Base:
         __nb_objects - a private attribute
     Methods:
         __init__(self, id=None)
+        to_json_string(list_dictionaries)
     """
 
     __nb_objects = 0
@@ -21,3 +23,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """return the JSON string representation of list_dictionaries"""
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
