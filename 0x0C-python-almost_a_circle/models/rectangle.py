@@ -21,6 +21,7 @@ class Rectangle(Base):
         y(self)         y(self, value)
         area(self)      display(self)
         __str__(self)   update(self, *args, **kwargs)
+        to_dictionary(self)
         """
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes class"""
@@ -106,7 +107,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """if args: assigns available args to the following attributes
-        in this order id, width, height, x, y
+                    in this order id, width, height, x, y
         if no args: set attributes according to kwargs"""
         if args:
             for idx, value in enumerate(args):
@@ -131,3 +132,13 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        dic_t = {}
+        dic_t["id"] = self.id
+        dic_t["width"] = self.width
+        dic_t["height"] = self.height
+        dic_t["x"] = self.x
+        dic_t["y"] = self.y
+        return dic_t
