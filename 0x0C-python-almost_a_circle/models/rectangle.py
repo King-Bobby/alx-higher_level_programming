@@ -91,8 +91,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints the rectangle shape using (#)"""
+        for a in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            print("{}{:s}".format(" " * self.__x, "#" * self.__width))
 
     def __str__(self):
         """Returns output [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
