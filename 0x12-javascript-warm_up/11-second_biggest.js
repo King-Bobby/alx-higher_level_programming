@@ -4,15 +4,20 @@ const args = process.argv.slice(2);
 if (args.length === 0 || args.length === 1) {
   console.log(0);
 } else {
-  let largest = args[0];
-  let secondLargest = -Infinity;
+  let largest = parseInt(args[0]);
+  let secondLargest = parseInt(args[1]);
 
-  for (let i = 1; i < args.length; i++) {
-    if (args[i] > largest) {
+  if (secondLargest > largest) {
+    [largest, secondLargest] = [secondLargest, largest];
+  }
+
+  for (let i = 2; i < args.length; i++) {
+    const num = parseInt(args[i]);
+    if (num > largest) {
       secondLargest = largest;
-      largest = args[i];
-    } else if (args[i] > secondLargest && args[i] < largest) {
-      secondLargest = args[i];
+      largest = num;
+    } else if (num > secondLargest && num !== largest) {
+      secondLargest = num;
     }
   }
   console.log(secondLargest);
