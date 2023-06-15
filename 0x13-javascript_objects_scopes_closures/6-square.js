@@ -16,7 +16,7 @@ class Square extends Square1 {
         }
         console.log(row);
       }
-    } else {
+    } else if (c === undefined){
       super.print();
     }
   }
