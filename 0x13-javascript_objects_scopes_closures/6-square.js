@@ -2,15 +2,24 @@
 const ParentSquare = require('./5-square');
 
 class Square extends ParentSquare {
+  constructor (size) {
+    super(size, size);
+    this.size = size;
+  }
+
   charPrint (c) {
     if (c === undefined) {
-      c = 'X';
+      super.print();
+    } else {
+      for (let i = 0; i < this.size; i++) {
+        let row = '';
+        for (let j = 0; j < this.size; j++) {
+          row += c;
+        }
+        console.log(row);
+      }
     }
-    let squareString = '';
-    for (let i = 0; i < this.height; i++) {
-      squareString += c.repeat(this.width) + '\n';
-    }
-    console.log(squareString);
   }
 }
+
 module.exports = Square;
