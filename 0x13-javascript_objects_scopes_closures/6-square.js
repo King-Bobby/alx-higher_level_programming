@@ -8,7 +8,9 @@ class Square extends Square1 {
   }
 
   charPrint (c) {
-    if (c === 'C') {
+    if (c === undefined) {
+      super.print();
+    } else {
       for (let i = 0; i < this.size; i++) {
         let row = '';
         for (let j = 0; j < this.size; j++) {
@@ -16,8 +18,6 @@ class Square extends Square1 {
         }
         console.log(row);
       }
-    } else if (c === undefined){
-      super.print();
     }
   }
 }
