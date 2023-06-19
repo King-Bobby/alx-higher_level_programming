@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+a script that lists all State objects from the database hbtn_0e_6_usa
+"""
+
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -11,7 +16,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create the connection string
-    connection_string = f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}"
+    connection_string = "mysql+mysqldb://" + username + ":" + password + \
+        "@localhost:3306/" + database
 
     # Create the SQLAlchemy engine
     engine = create_engine(connection_string)
