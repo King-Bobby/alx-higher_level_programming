@@ -26,7 +26,8 @@ if __name__ == "__main__":
 
     # Execute the SQL query to select all states
     cursor.execute(
-            "SELECT * FROM states WHERE name = %s ORDER BY id ASC", (n_arg,))
+            "SELECT * FROM states \
+                    WHERE BINARY name = %s ORDER BY id ASC", (n_arg,))
     # Fetch all the rows from the result set
     results = cursor.fetchall()
 
