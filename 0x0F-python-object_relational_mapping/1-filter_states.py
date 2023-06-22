@@ -17,7 +17,7 @@ if __name__ == "__main__":
             db=sys.argv[3]
             )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states
+    cursor.execute("SELECT * FROM states \
                    WHERE name REGEXP '^[N]' ORDER BY id ASC")
     results = cursor.fetchall()
     for row in results:
