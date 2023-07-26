@@ -8,7 +8,7 @@ const fs = require('fs');
  * @param {string} url - The URL to request.
  * @param {string} filePath - The file path to store the body response.
  */
-function getRequestAndStoreToFile(url, filePath) {
+function getRequestAndStoreToFile (url, filePath) {
   request.get(url, (error, response, body) => {
     if (error) {
       console.error(error);
