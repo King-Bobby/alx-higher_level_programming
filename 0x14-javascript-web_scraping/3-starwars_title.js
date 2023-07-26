@@ -6,7 +6,7 @@ const request = require('request');
  * Prints the title of a Star Wars movie based on the episode number.
  * @param {number} movieId - The episode number of the movie to retrieve.
  */
-function printStarWarsMovieTitle(movieId) {
+function printStarWarsMovieTitle (movieId) {
   const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
   request.get(apiUrl, (error, response, body) => {
