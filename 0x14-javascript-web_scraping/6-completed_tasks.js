@@ -6,7 +6,7 @@ const request = require('request');
  * Computes the number of tasks completed by user id.
  * @param {string} apiUrl - The API URL to request.
  */
-function countCompletedTasksByUserId(apiUrl) {
+function countCompletedTasksByUserId (apiUrl) {
   const completedTasksByUser = {};
 
   request.get(apiUrl, (error, response, body) => {
@@ -22,14 +22,17 @@ function countCompletedTasksByUserId(apiUrl) {
         }
       });
 
-      console.log(completedTasksByUser);
+      // Updated output formatting
+      for (const userId in completedTasksByUser) {
+        console.log(`${userId}: ${completedTasksByUser[userId]}`);
+      }
     } else {
       console.error('Error: Failed to fetch data from the API.');
     }
   });
 }
 
-// Check if the API URL argument is provided.
+#Check that the API URL argument is provided.
 if (process.argv.length < 3) {
   console.error('Usage: node 6-completed_tasks.js <API-URL>');
 } else {
