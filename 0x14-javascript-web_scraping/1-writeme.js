@@ -7,8 +7,7 @@ const fs = require('fs');
  * @param {string} filePath - The path to the file to be written.
  * @param {string} content - The string content to be written to the file.
  */
-
-function writeToFile(filePath, content) {
+function writeToFile (filePath, content) {
   fs.writeFile(filePath, content, 'utf-8', (err) => {
     if (err) {
       console.error(err);
