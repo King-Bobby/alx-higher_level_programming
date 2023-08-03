@@ -22,5 +22,12 @@ Note: Every file answers it corresponding number, even the test files in the <i>
 
 9. Write a JavaScript script that fetches from https://fourtonfish.com/hellosalut/?lang=fr and displays the value of hello from that fetch in the HTML tag DIV#hello.
 
+100. Write a JavaScript script that updates the text color of the <header> element to red (#FF0000):
+
+101. Write a JavaScript script that adds, removes and clears LI elements from a list when the user clicks:
+
+102. Write a JavaScript script that fetches and prints how to say “Hello” depending on the language
+
+
 Author
 Noel Brown
