@@ -20,7 +20,7 @@ It requires atleast one name
 ::
 
     >>> say_my_name("Adamu")
-    My name is Adamu
+    My name is Adamu 
 
 Non-Strings
 ===========
