@@ -1,0 +1,35 @@
+================================
+How to use 5-text_indentation.py
+================================
+
+This modules defines a fuction ``text_indentation(text)``
+
+Usage
+=====
+``text_indentation(text)`` takes a block text and splits it into singular sentences
+It begins a new line if the next character is either of these three ('.','?',':')
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    John
+
+::
+
+    >>> text_indentation("Alx is the best")
+    Alx is the best
+
+Text must be a string
+
+::
+
+    >>> text_indentation(23)
+    Traceback (most recent call last):
+    TypeError: text must be a string
